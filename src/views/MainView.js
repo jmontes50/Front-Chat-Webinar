@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, Fragment } from "react";
 import io from "socket.io-client";
 import { AuthContext } from "../context/authContext";
 import Chat from "../components/Chat";
@@ -55,15 +55,28 @@ function MainView() {
   }
 
   return (
-    <div className="container">
-      {userState === null ? null : (
-        <Chat
-          mensajes={mensajes}
-          actualUser={userState.email}
-          mandarMensaje={mandarMensaje}
-        />
-      )}
-    </div>
+    <Fragment>
+      <div className="container main">
+        {userState === null ? null : (
+          <Chat
+            mensajes={mensajes}
+            actualUser={userState.email}
+            mandarMensaje={mandarMensaje}
+          />
+        )}
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        className="ondas"
+      >
+        <path
+          fill="#FFB61D"
+          fill-opacity="1"
+          d="M0,96L60,106.7C120,117,240,139,360,170.7C480,203,600,245,720,261.3C840,277,960,267,1080,240C1200,213,1320,171,1380,149.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
+    </Fragment>
   );
 }
 

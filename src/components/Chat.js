@@ -6,7 +6,11 @@ function Chat({ mensajes, actualUser, mandarMensaje }) {
   const [mensaje, setMensaje] = useState("");
 
   const sendMessage = () => {
+    if(mensaje.trim() === ""){
+      return;
+    }
     mandarMensaje(mensaje);
+    setMensaje("" )
   };
 
   return (
@@ -29,7 +33,8 @@ function Chat({ mensajes, actualUser, mandarMensaje }) {
             onChange={(e) => {
               setMensaje(e.target.value);
             }}
-          ></input>
+            placeholder="Escribe un mensaje!!!"
+          />
         </div>
         {/* input */}
         <div className="col-1">

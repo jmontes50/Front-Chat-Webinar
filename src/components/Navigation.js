@@ -9,9 +9,9 @@ export default function Navigation() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <div className="container poppins">
-        <Navbar.Brand className="semi-bold">
-          <i className="fas fa-tasks mr-1"></i>
-          TareasApp
+        <Navbar.Brand className="semi-bold fw-bold">
+        <i className="fas fa-comments pe-2 "></i>
+          CodiChat
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -21,20 +21,7 @@ export default function Navigation() {
             </NavLink>
             {userState ? (
               <Fragment>
-                <NavLink
-                  to="/tareas"
-                  className="nav-link"
-                  activeClassName="active"
-                >
-                  Tareas
-                </NavLink>
-                <NavLink
-                  to="/usuarios"
-                  className="nav-link"
-                  activeClassName="active"
-                >
-                  Usuarios
-                </NavLink>
+              {/* Aqui iria validando si el usuario esta logueado pero no hay nada que esconder */}
               </Fragment>
             ) : null}
           </Nav>
@@ -58,15 +45,7 @@ export default function Navigation() {
                   <NavDropdown.Item onClick={signOut}>Salir</NavDropdown.Item>
                 </NavDropdown>
               </Fragment>
-            ) : (
-              <NavLink
-                to="/login"
-                className="nav-link"
-                activeClassName="active"
-              >
-                Login
-              </NavLink>
-            )}
+            ) : null}
           </Nav>
         </Navbar.Collapse>
       </div>
