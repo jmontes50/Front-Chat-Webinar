@@ -8,9 +8,14 @@ Se requiere Node.js para instalar la App, de preferencia en su versión 12 o sup
 
 ```bash
 npm install
+
 ```
 
+Después de instalar la App, podemos iniciar la aplicación con el comando:
 
+```bash
+npm start
+```
 
 ## Usage
 Agregar la configuracion de firebase en config/Firebase.js, o agregar su archivo .en en la raíz
